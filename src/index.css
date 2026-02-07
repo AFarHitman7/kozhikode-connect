@@ -1,0 +1,327 @@
+@import "@fontsource/playfair-display/400.css";
+@import "@fontsource/playfair-display/500.css";
+@import "@fontsource/playfair-display/600.css";
+@import "@fontsource/playfair-display/700.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Calicut Commons Design System
+   Kozhikode — the city of laterite and spice, sea breeze and old timber.
+   Inspired by: Malabar jali windows, SM Street signage, chai stall notice boards.
+   Feels inhabited, not engineered.
+*/
+
+@layer base {
+  :root {
+    /* Core palette — Kozhikode: laterite earth, spice warmth, Arabian Sea */
+    --background: 40 35% 94%;
+    --foreground: 25 20% 12%;
+    
+    --card: 40 38% 96%;
+    --card-foreground: 25 20% 12%;
+    
+    --popover: 40 38% 96%;
+    --popover-foreground: 25 20% 12%;
+    
+    /* Laterite terracotta — the red earth of Malabar */
+    --primary: 12 55% 36%;
+    --primary-foreground: 40 40% 96%;
+    
+    /* Warm coconut cream secondary */
+    --secondary: 38 25% 89%;
+    --secondary-foreground: 25 18% 22%;
+    
+    --muted: 38 18% 86%;
+    --muted-foreground: 25 12% 42%;
+    
+    /* Deep Malabar indigo — traditional textile blue */
+    --accent: 222 50% 24%;
+    --accent-foreground: 40 35% 94%;
+    
+    --destructive: 0 65% 45%;
+    --destructive-foreground: 40 35% 94%;
+    
+    --border: 32 22% 78%;
+    --input: 35 22% 83%;
+    --ring: 12 55% 36%;
+    
+    --radius: 0.25rem;
+    
+    /* Custom Kozhikode tokens */
+    --lattice: 38 18% 86%;
+    --lattice-stroke: 12 55% 36%;
+    --badge-anchor: 222 50% 24%;
+    --badge-anchor-foreground: 40 35% 94%;
+    --timestamp: 30 18% 55%;
+    --location: 25 14% 38%;
+    --spice: 42 75% 48%;
+    --spice-foreground: 25 30% 12%;
+    --sea: 200 45% 35%;
+    --sea-foreground: 40 35% 94%;
+    
+    /* Sidebar tokens */
+    --sidebar-background: 40 30% 91%;
+    --sidebar-foreground: 25 18% 20%;
+    --sidebar-primary: 12 55% 36%;
+    --sidebar-primary-foreground: 40 40% 96%;
+    --sidebar-accent: 38 22% 86%;
+    --sidebar-accent-foreground: 25 18% 20%;
+    --sidebar-border: 32 22% 78%;
+    --sidebar-ring: 12 55% 36%;
+  }
+
+  .dark {
+    --background: 25 18% 9%;
+    --foreground: 38 25% 90%;
+    
+    --card: 25 16% 11%;
+    --card-foreground: 38 25% 90%;
+    
+    --popover: 25 16% 11%;
+    --popover-foreground: 38 25% 90%;
+    
+    --primary: 12 50% 52%;
+    --primary-foreground: 25 18% 9%;
+    
+    --secondary: 25 14% 17%;
+    --secondary-foreground: 38 22% 88%;
+    
+    --muted: 25 14% 18%;
+    --muted-foreground: 38 15% 55%;
+    
+    --accent: 222 45% 55%;
+    --accent-foreground: 25 18% 9%;
+    
+    --destructive: 0 55% 48%;
+    --destructive-foreground: 38 25% 90%;
+    
+    --border: 25 14% 20%;
+    --input: 25 14% 20%;
+    --ring: 12 50% 52%;
+    
+    --lattice: 25 14% 14%;
+    --lattice-stroke: 12 40% 42%;
+    --badge-anchor: 222 45% 50%;
+    --badge-anchor-foreground: 25 18% 9%;
+    --timestamp: 38 12% 48%;
+    --location: 38 16% 52%;
+    --spice: 42 65% 45%;
+    --spice-foreground: 25 18% 9%;
+    --sea: 200 40% 45%;
+    --sea-foreground: 25 18% 9%;
+    
+    --sidebar-background: 25 18% 7%;
+    --sidebar-foreground: 38 22% 88%;
+    --sidebar-primary: 12 50% 52%;
+    --sidebar-primary-foreground: 25 18% 9%;
+    --sidebar-accent: 25 14% 14%;
+    --sidebar-accent-foreground: 38 22% 88%;
+    --sidebar-border: 25 14% 18%;
+    --sidebar-ring: 12 50% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  /* Lattice pattern for header */
+  .lattice-pattern {
+    background-image: 
+      linear-gradient(45deg, transparent 45%, hsl(var(--lattice-stroke) / 0.15) 45%, hsl(var(--lattice-stroke) / 0.15) 55%, transparent 55%),
+      linear-gradient(-45deg, transparent 45%, hsl(var(--lattice-stroke) / 0.15) 45%, hsl(var(--lattice-stroke) / 0.15) 55%, transparent 55%);
+    background-size: 24px 24px;
+  }
+  
+  /* Dotted pattern overlay */
+  .dot-pattern {
+    background-image: radial-gradient(circle, hsl(var(--lattice-stroke) / 0.2) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  /* Community card styling */
+  .community-card {
+    @apply relative bg-card border-2 border-border transition-all duration-200;
+    box-shadow: 4px 4px 0 hsl(var(--border));
+  }
+  
+  .community-card:hover {
+    box-shadow: 6px 6px 0 hsl(var(--primary) / 0.2);
+    @apply border-primary/50;
+  }
+  
+  /* Anchor badge */
+  .badge-anchor {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium uppercase tracking-wider;
+    background-color: hsl(var(--badge-anchor));
+    color: hsl(var(--badge-anchor-foreground));
+  }
+  
+  /* Rhythm filter pills */
+  .rhythm-pill {
+    @apply px-4 py-2 text-sm font-medium border-2 transition-all duration-150;
+  }
+  
+  .rhythm-pill-active {
+    @apply bg-primary text-primary-foreground border-primary;
+  }
+  
+  .rhythm-pill-inactive {
+    @apply bg-transparent text-foreground border-border hover:border-primary/50;
+  }
+  
+  /* Quote styling */
+  .quote-text {
+    @apply italic text-muted-foreground;
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+  
+  /* Nav link styling */
+  .nav-link {
+    @apply relative text-foreground/80 hover:text-foreground transition-colors duration-150;
+  }
+  
+  .nav-link-active {
+    @apply text-foreground;
+  }
+  
+  .nav-link-active::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 right-0 h-0.5 bg-primary;
+  }
+
+  /* === Live Event Marquee === */
+  .live-marquee-wrapper {
+    @apply bg-primary text-primary-foreground overflow-hidden relative;
+    height: 40px;
+  }
+
+  .live-marquee-label {
+    @apply flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest pr-4 shrink-0 z-10;
+    @apply bg-primary;
+  }
+
+  .live-marquee-track {
+    @apply overflow-hidden flex-1 relative;
+    mask-image: linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%);
+  }
+
+  .live-marquee-content {
+    @apply flex items-center gap-8 whitespace-nowrap;
+    animation: marquee-scroll 30s linear infinite;
+  }
+
+  .live-marquee-content:hover {
+    animation-play-state: paused;
+  }
+
+  .live-marquee-item {
+    @apply flex items-center gap-2 text-xs shrink-0 hover:opacity-80 transition-opacity;
+  }
+
+  .live-marquee-dot {
+    @apply w-1.5 h-1.5 rounded-full bg-primary-foreground animate-pulse shrink-0;
+  }
+
+  .live-marquee-meta {
+    @apply flex items-center gap-1 opacity-70;
+  }
+
+  /* === Event Cards === */
+  .event-card-live {
+    border-color: hsl(var(--primary)) !important;
+    box-shadow: 4px 4px 0 hsl(var(--primary) / 0.3), 0 0 0 1px hsl(var(--primary) / 0.1) !important;
+  }
+
+  .event-status-live {
+    @apply inline-flex items-center gap-1.5 px-2 py-0.5 font-medium uppercase tracking-wider;
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    font-size: 0.65rem;
+  }
+
+  /* Event filter selects */
+  .event-filter-select {
+    @apply px-3 py-2 text-sm border-2 border-border bg-card text-foreground;
+    @apply focus:outline-none focus:border-primary/50 transition-colors;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    padding-right: 28px;
+  }
+
+  /* Event tabs */
+  .event-tab {
+    @apply flex items-center gap-2 px-4 py-3 text-sm font-medium text-muted-foreground border-b-2 border-transparent transition-all;
+    @apply hover:text-foreground;
+  }
+
+  .event-tab-active {
+    @apply text-foreground border-primary;
+  }
+
+  .event-tab-count {
+    @apply text-xs px-1.5 py-0.5 bg-muted rounded-sm;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+  
+  .font-body {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Staggered fade-in animation */
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.4s ease-out forwards;
+    opacity: 0;
+  }
+
+  /* Marquee scroll animation */
+  @keyframes marquee-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-33.333%);
+    }
+  }
+}
