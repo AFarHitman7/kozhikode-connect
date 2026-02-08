@@ -9,7 +9,7 @@ const Food = () => {
             Food as Infrastructure
           </h2>
           <p className="quote-text text-lg md:text-xl leading-relaxed mb-8">
-            "Dish-centric, not restaurant-centric. No ratings. No lists."
+            "Dish centric, not restaurant centric. No ratings. No lists."
           </p>
         </div>
 
