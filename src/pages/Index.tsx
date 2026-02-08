@@ -21,7 +21,7 @@ const Index = () => {
             The Social Fabric
           </h2>
           <p className="quote-text text-lg md:text-xl leading-relaxed">
-            "SM Street-ലെ ചായക്കടയിൽ നിന്ന് കടൽതീരത്തിന്റെ പ്രഭാതം വരെ — Kozhikode's rhythm is its people."
+            "SM Street-ലെ ചായക്കടയിൽ നിന്ന് കടൽതീരത്തിന്റെ പ്രഭാതം വരെ  Kozhikode's rhythm is its people."
           </p>
         </div>
       </section>
