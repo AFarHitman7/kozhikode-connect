@@ -9,7 +9,7 @@ const Archives = () => {
             Archives
           </h2>
           <p className="quote-text text-lg md:text-xl leading-relaxed">
-            "Short-form archival entries. Origin stories, lost food spots, seasonal rituals. 
+            "Short form archival entries. Origin stories, lost food spots, seasonal rituals. 
             This is preservation, not blogging."
           </p>
         </div>
@@ -25,12 +25,12 @@ const Archives = () => {
             {
               title: "Ramadan Nights at Beach Road, 1990s",
               date: "Oral History",
-              excerpt: "Before the food courts, before the Instagram spots—when iftar was community infrastructure.",
+              excerpt: "Before the food courts, before the Instagram spots when iftar was community infrastructure.",
             },
             {
               title: "The Running Trail Before the Running App",
               date: "Community Memory",
-              excerpt: "How Calicut Runners established the Mananchira-Beach route before fitness became algorithmic.",
+              excerpt: "How Calicut Runners established the Mananchira Beach route before fitness became algorithmic.",
             },
           ].map((entry, index) => (
             <article 
